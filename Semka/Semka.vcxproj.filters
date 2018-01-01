@@ -19,6 +19,9 @@
     <Filter Include="Header Files\Database">
       <UniqueIdentifier>{1909ebab-23c5-485a-9db4-5f67bd3a7f0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Tables">
+      <UniqueIdentifier>{4ab8c10c-711e-4af2-a4ba-ee8de6ef0101}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -30,6 +33,12 @@
     <ClInclude Include="Database.h">
       <Filter>Header Files\Database</Filter>
     </ClInclude>
+    <ClInclude Include="Logins.h">
+      <Filter>Header Files\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="table.h">
+      <Filter>Header Files\Database</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -38,8 +47,14 @@
     <ClCompile Include="Semka.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Logins.cpp">
+      <Filter>Source Files\Database</Filter>
+    </ClCompile>
     <ClCompile Include="Database.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="table.cpp">
+      <Filter>Source Files\Database</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
