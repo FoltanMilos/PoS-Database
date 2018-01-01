@@ -7,9 +7,11 @@ using namespace std;
 
 class Table
 {
+	int checkErr;
 public:
 	Table(string pTableName);
-
+	int getErrCheckResult();
+	
 
 	//alters
 	bool addColumns(); 

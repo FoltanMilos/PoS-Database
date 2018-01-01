@@ -9,7 +9,13 @@ Database::Database()
 bool Database::createTable(string pTableName)
 {
 	Table *tbl = new Table(pTableName);
-	return true;
+	if (tbl->getErrCheckResult() < 0) {
+		return false;
+	}
+	else {
+		return true;
+	}
+	
 }
 
 

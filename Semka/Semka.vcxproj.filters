@@ -22,6 +22,9 @@
     <Filter Include="Resource Files\Tables">
       <UniqueIdentifier>{4ab8c10c-711e-4af2-a4ba-ee8de6ef0101}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{608f4a37-7f0c-44b5-9132-8d44f0c20c05}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -38,6 +41,9 @@
     </ClInclude>
     <ClInclude Include="table.h">
       <Filter>Header Files\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
