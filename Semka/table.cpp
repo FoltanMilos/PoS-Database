@@ -5,56 +5,66 @@
 
 Table::Table(string pTableName)
 {
-	fstream file; // nevytvori ziadny subor ak by neexistoval
-	file.open(pTableName + ".txt");   	
-	if (file.is_open())  //ak neexistuje neotvori sa
-	{
-		cout << "This table name already exists" << endl;
-		file.close();
-	}
-	else {
-		ofstream file;
-		file.open(pTableName + ".txt"); //ak neexistuje vytvori  	
-		cout << "TabulkaVytvorena! \n" << endl;
-		checkErr = 0;
-	}
-
-	/*
-	FILE *files;
-	errno_t err;
-	err = fopen_s(&files, pTableName.c_str(), "r");
-	if (files != nullptr) {
-		//fclose(files);
-		cout << "This table name already exists" << endl;
-		checkErr = -1;
-	}
-	else {
-		ofstream file;
-		file.open(pTableName + ".txt"); //ak neexistuje vytvori  	
-		file.close();
-		cout << "TabulkaVytvorena! \n" << endl;
-		checkErr = 0;
-	}
-	*/
-	
+	name = pTableName;
+	prava = new vector<string>();
+	typPrava = new vector<string>();
+	columns = new vector<string>();
+	typ = new vector<string>();
+	pk = new vector<string>();
+	notNull = new vector<string>();
 }
 
-int Table::getErrCheckResult()
+bool Table::initTable()
 {
-	return checkErr;
+	ifstream file;
+	string ch = "";
+	file.open(name + ".txt");
+	getline(file, ch, ',');
+	if (ch == "") { //nacita prve slovo, ak tam neni je prazda
+		return false;
+	}
+	//while (!file.eof())
+	//{
+		string tmp = "";
+		
+		while (1)
+		{
+			getline(file, tmp, ',');
+			if (tmp == "typPrava") {
+				break;
+			}
+			prava->push_back(tmp); //prava
+		}
+		while (tmp != "columns")
+		{
+			getline(file, tmp, ',');
+			columns->push_back(tmp); //stplce
+		}
+		
+	//}
+	return true;
 }
 
 
-bool Table::addColumns()
+bool Table::addColumns(string pNazov, string pTyp)
+{
+	return false;
+}
+
+bool Table::delColumn()
 {
 	return false;
 }
 
 string Table::toStringTable()
 {
+	string tmp = "";
+	for(string var : *prava)
+	{
+		tmp = tmp + var;
+	}
 
-
-	return string();
+	return tmp;
 }
 
 Table::~Table()

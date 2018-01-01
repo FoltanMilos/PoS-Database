@@ -1,0 +1,7 @@
+prava,admin,typPrava,x+r+w,columns,id,meno,priezvisko,kraj,typ:int,string,string,string,
+PK:id,x,x,x,
+NN:id,meno,priezvisko,x,
+rows:1,Milos,Foltan,ZA,
+rows:2,Jakub,Sarina,BB,
+rows:3,Milos,Foltan,ZA,
+rows:4,Jakub,Sarina,BB,

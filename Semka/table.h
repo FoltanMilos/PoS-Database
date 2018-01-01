@@ -2,19 +2,25 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 class Table
 {
-	int checkErr;
+	string name;
+	vector<string> *prava;
+	vector<string> *typPrava;
+	vector<string> *columns;
+	vector<string> *typ;
+	vector<string> *pk;
+	vector<string> *notNull;
 public:
 	Table(string pTableName);
-	int getErrCheckResult();
 	
-
+	bool initTable();
 	//alters
-	bool addColumns(); 
+	bool addColumns(string pNazov, string pTyp); // bolo by dobre locknut mutex aby sem nikto v tomto case nepristupil
 	bool delColumn();
 	string toStringTable();
 	~Table();
