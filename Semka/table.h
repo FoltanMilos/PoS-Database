@@ -15,6 +15,7 @@ class Table
 	vector<string> *typ;
 	vector<string> *pk;
 	vector<string> *notNull;
+	string rows;
 public:
 	Table(string pTableName);
 	
